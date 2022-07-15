@@ -6,8 +6,8 @@ inputs:
   sfdx-version:
     description:
 outputs:
-  cumulusci-version: ${{ steps.store.outputs.cumulusci }}
-  sfdx-version: $ {{ steps.store.outputs.sfdx }}
+  cumulusci-version: '${{ steps.store.outputs.cumulusci }}'
+  sfdx-version: '${{ steps.store.outputs.sfdx }}'
 runs:
     using: "composite"
     steps:
