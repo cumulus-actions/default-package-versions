@@ -1,5 +1,10 @@
 name: Set Default Package Versions
 description: 'Set default versions for CumulusCI and sfdx'
+inputs:
+  cumulusci-version:
+    description:
+  sfdx-version:
+    description:
 outputs:
   cumulusci-version: ${{ steps.store.outputs.cumulusci }}
   sfdx-version: $ {{ steps.store.outputs.sfdx }}
@@ -9,6 +14,8 @@ runs:
       - name: Store Versions
         id: store
         run: |
-          echo "::set-output name=cumulusci::3.61.1"
-          echo "::set-output name=sfdx::7.154"
+          VERSION='${{ inputs.cumulusci-version }}'
+          echo "::set-output name=cumulusci::${VERSION:-3.61.1}"
+          VERSION='${{ inputs.sfdx-version }}'
+          echo "::set-output name=sfdx::${VERSION:-7.154}"
         shell: bash
