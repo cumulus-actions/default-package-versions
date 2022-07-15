@@ -2,12 +2,14 @@ name: Set Default Package Versions
 description: 'Set default versions for CumulusCI and sfdx'
 inputs:
   cumulusci-version:
-    description:
+    description: The desired CumulusCI version, or no value for the default
   sfdx-version:
-    description:
+    description: The desired SFDX version, or no value for the default
 outputs:
-  cumulusci-version: '${{ steps.store.outputs.cumulusci }}'
-  sfdx-version: '${{ steps.store.outputs.sfdx }}'
+  cumulusci-version:
+    value: '${{ steps.store.outputs.cumulusci }}'
+  sfdx-version: 
+    value: '${{ steps.store.outputs.sfdx }}'
 runs:
     using: "composite"
     steps:
