@@ -7,9 +7,9 @@ inputs:
     description: The desired SFDX version, or no value for the default
 outputs:
   cumulusci-version:
-    value: '${{ steps.store.outputs.cumulusci }}'
+    value: '${{ steps.store.outputs.cumulusci-version }}'
   sfdx-version: 
-    value: '${{ steps.store.outputs.sfdx }}'
+    value: '${{ steps.store.outputs.sfdx-version }}'
 runs:
     using: "composite"
     steps:
