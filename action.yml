@@ -17,7 +17,7 @@ runs:
         id: store
         run: |
           VERSION='${{ inputs.cumulusci-version }}'
-          echo "::set-output name=cumulusci-version::${VERSION:-3.61.1}"
+          echo "::set-output name=cumulusci-version::${VERSION:-3.75.1}"
           VERSION='${{ inputs.sfdx-version }}'
           echo "::set-output name=sfdx-version::${VERSION:-7.154}"
         shell: bash
