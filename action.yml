@@ -17,7 +17,7 @@ runs:
         id: store
         run: |
           VERSION='${{ inputs.cumulusci-version }}'
-          echo "::set-output name=cumulusci-version::${VERSION:-3.75.1}"
+          echo "cumulusci-version=${VERSION:-3.75.1}" >> $GITHUB_OUTPUT
           VERSION='${{ inputs.sfdx-version }}'
-          echo "::set-output name=sfdx-version::${VERSION:-7.154}"
+          echo "sfdx-version=${VERSION:-7.154}" >> $GITHUB_OUTPUT
         shell: bash
